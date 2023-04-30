@@ -9,7 +9,7 @@ class Country extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    public function Identification(){
+    public function identification(){
         return $this->hasMany(Identification::class);
     }
 }

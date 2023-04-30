@@ -9,11 +9,11 @@ class Identification extends Model
 {
     use HasFactory;
 
-    public function Country(){
+    public function country(){
         return $this->belongsTo(Country::class);
     }
 
-    public function Author(){
+    public function author(){
         return $this->hasMany(Author::class);
     }
 }
