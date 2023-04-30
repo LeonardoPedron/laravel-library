@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,11 @@ Route::get('/', function () {
 });
 
 
+
 // <editor-folder desc="Start Route Books">
 Route::get('/books', [BookController::class, 'index']);
+// </editor-folder>
+
+// <editor-folder desc="Start Route Authors">
+Route::get('/authors', [AuthorController::class, 'index']);
 // </editor-folder>
