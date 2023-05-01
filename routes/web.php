@@ -19,8 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 // <editor-folder desc="Start Route Books">
 Route::get('/books', [BookController::class, 'index']);
 // </editor-folder>
