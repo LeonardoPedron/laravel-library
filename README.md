@@ -5,24 +5,26 @@ In order to take advantage of and use the following project, the following requi
 <a href="https://www.php.net/downloads.php">![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)</a>
 <a href="https://getcomposer.org/download/">![Composer](https://img.shields.io/badge/COMPOSER-white?style=for-the-badge&logo=composer&logoColor=black)</a>
 <a href="https://nodejs.org/en/download">![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)</a>
-
-<a href="https://www.jetbrains.com/phpstorm/download/">![PhpStorm](https://img.shields.io/badge/phpstorm-143?style=for-the-badge&logo=phpstorm&logoColor=black&color=black&labelColor=darkorchid)</a> 
-<a href="https://www.jetbrains.com/phpstorm/download/">![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)</a> 
-
-
+<a href="https://www.jetbrains.com/phpstorm/download/">![PhpStorm](https://img.shields.io/badge/phpstorm-143?style=for-the-badge&logo=phpstorm&logoColor=black&color=black&labelColor=darkorchid)</a>
 
 # Set-up project
 
 ``` 
-    git clone https://github.com/LeonardoPedron/laravel-library.git 
+git clone https://github.com/LeonardoPedron/laravel-library.git 
     
-    cd laravel-library  
+cd laravel-library  
 
-    composer installer
-    php artisan key:generator
-    php artisan migrate
-    php artisan serve
+composer install
 ```
+Copy the .env.example file and rename it as .env
+
+```
+php artisan key:generator
+php artisan migrate
+php artisan serve
+```
+
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\PublisherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 // <editor-folder desc="Start Route Books">
 Route::get('/books', [BookController::class, 'index']);
 Route::get('/books/{book}',[BookController::class, 'show']);
@@ -33,4 +32,8 @@ Route::delete('/books/{book}', [BookController::class, 'destroy']);
 
 // <editor-folder desc="Start Route Authors">
 Route::get('/authors', [AuthorController::class, 'index']);
+// </editor-folder>
+
+// <editor-folder desc="Start Route Authors">
+Route::get('/publishers', [PublisherController::class, 'index']);
 // </editor-folder>
