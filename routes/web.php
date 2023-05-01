@@ -23,6 +23,12 @@ Route::get('/', function () {
 
 // <editor-folder desc="Start Route Books">
 Route::get('/books', [BookController::class, 'index']);
+Route::get('/books/{book}',[BookController::class, 'show']);
+Route::get('/book/{book}/edit',[BookController::class, 'edit']);
+Route::get('/books/create',[BookController::class, 'create']);
+Route::post('/books',[BookController::class, 'store']);
+Route::patch('/books/{book}', [BookController::class, 'update']);
+Route::delete('/books/{book}', [BookController::class, 'destroy']);
 // </editor-folder>
 
 // <editor-folder desc="Start Route Authors">
