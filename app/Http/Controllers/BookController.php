@@ -9,35 +9,25 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    //
 
     public function index(){
-
         return view('library.books.index',[
             'books' => Book::all()
         ]);
     }
 
     public function show(Book $book) {
-
-        return view('books.show', compact('book'));
-
+        return view('library.books.show', compact('book'));
     }
 
-    public function edit(Book $book /* int $key*/){
-
+    public function edit(Book $book){
         $authors = Author::all();
+        $publishers = Publisher::all();
 
-        $publisher = Publisher::all();
-
-        // $note = Note::find($key);  // questa nella nostra biblioteca corrisponde al GetById
-
-        return view('book.edit', compact('book', 'authors', 'publisher'));
-
+        return view('library.books.edit', compact('book', 'authors', 'publishers'));
     }
 
     public function update(Request $request,Book $book) {
-
         $book->title = $request->get('title');
         $book->isbn = $request->get('isbn');
         $book->description = $request->get('description');
@@ -51,7 +41,6 @@ class BookController extends Controller
         $book->save();
 
         return redirect('library.books.index');
-
     }
 
     public function create(){
@@ -59,12 +48,10 @@ class BookController extends Controller
         $author = Author::all();
         $publisher = Publisher::all();
 
-        view('library.book.edit', compact('book','author','publisher'));
-
+        view('library.books.edit', compact('book','author','publisher'));
     }
 
     public function store(Request $request) {
-
         $book = new Book();
 
         $book->title = $request->get('title');
@@ -80,14 +67,11 @@ class BookController extends Controller
         $book->save();
 
         return redirect('library.books.index');
-
     }
     public function destroy( Book $book){
-
         $book->delete();
 
         return redirect('library.books');
-
     }
 
 }

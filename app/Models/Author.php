@@ -10,9 +10,9 @@ class Author extends Model
     use HasFactory;
 
     public function identification(){
-        return $this->belongsTo(Indetification::class);
+        return $this->belongsTo(Identification::class);
     }
-    public function book(){
+    public function books(){
         return $this->hasMany(Book::class);
     }
 }

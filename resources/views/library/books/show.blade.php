@@ -20,7 +20,7 @@
     <p>Publischer : {{$book->publisher->name}}</p>
 </div>
 <div>
-    <p>Autore : {{$note->author->name}}</p>
+    <p>Autore : {{$book->author->identification->name}}</p>
 </div>
 </body>
 </html>

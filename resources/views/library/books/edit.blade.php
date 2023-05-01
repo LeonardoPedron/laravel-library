@@ -24,7 +24,7 @@
         </div>
         <div>
             <label class="form-label" for="description">Description</label>
-            <textarea type="content" name="description" id="description" >{{$note->description}}</textarea>>
+            <textarea type="content" name="description" id="description" >{{$book->description}}</textarea>>
         </div>
         <div>
             <label class="form-label" for="dt_publication">Date Publication</label>
@@ -44,7 +44,7 @@
             <select name="id_author" id="id_author" required>
                 <option value=""></option>
                 @foreach($authors  as $author)
-                    <option {{$author->id == $note->author?->id ? 'selected' : ''}} value="{{$author->id}}">{{$author->identifacion->name}} ." ". {{$author->identification->surname}}</option>
+                    <option {{$author->id == $author->author?->id ? 'selected' : ''}} value="{{$author->id}}">{{$author->identification->name}} ." ". {{$author->identification->surname}}</option>
                 @endforeach
             </select>
         </div>
