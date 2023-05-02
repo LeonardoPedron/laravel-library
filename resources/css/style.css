@@ -127,12 +127,15 @@ a:hover{ color: var(--button-hover) !important; }
 .form-control:focus {
     background-color: var(--form-input) !important;
     border-color: var(--button) !important;
-    outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(97, 70, 234, 0.5);
+    box-shadow: 0 0 0 .25rem rgba(97, 70, 234, 0.5) !important;
 }
 
 .navbar-toggler { border: var(--bs-border-width) solid var(--button) !important; }
 .navbar-nav .nav-link.active{
     color: var(--button-hover) !important;
     font-weight: 600;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 .25rem rgba(97, 70, 234, .2) !important;
 }
