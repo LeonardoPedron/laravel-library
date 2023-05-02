@@ -28,6 +28,9 @@
     --label: #2b2c34;
     --placeholder: #2b2c34;
 }
+
+body{background: var(--background);}
+
 ::placeholder{ color: var(--placeholder) !important;}
 
 .btn{--bs-btn-border-radius: 2px;}
@@ -149,4 +152,9 @@ a:hover{ color: var(--button-hover) !important; }
 .dropdown-menu-dark { --bs-dropdown-bg: var(--background) !important; }
 .dropdown-item:focus, .dropdown-item:hover {
     background-color: var(--secondary) !important;
+}
+
+.table{
+    --bs-table-striped-bg: var(--secondary) !important;
+    --bs-table-border-color: var(--button) !important;
 }
