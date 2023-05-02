@@ -30,6 +30,7 @@
 }
 ::placeholder{ color: var(--placeholder) !important;}
 
+.btn{--bs-btn-border-radius: 2px;}
 .btn-primary{
     --bs-btn-color: var(--button-text) !important;
     --bs-btn-bg: var(--button) !important;
@@ -124,18 +125,28 @@ a:hover{ color: var(--button-hover) !important; }
 
 .bg-secondary{ background-color: var(--secondary) !important; }
 
+.form-control{ border-radius: 2px; }
 .form-control:focus {
     background-color: var(--form-input) !important;
     border-color: var(--button) !important;
-    box-shadow: 0 0 0 .25rem rgba(97, 70, 234, 0.5) !important;
+    box-shadow: 0 0 5px .1rem rgba(97, 70, 234, 1) !important;
 }
 
 .navbar-toggler { border: var(--bs-border-width) solid var(--button) !important; }
 .navbar-nav .nav-link.active{
     color: var(--button-hover) !important;
-    font-weight: 600;
+    font-weight: 600 !important;
+}
+.nav-pills .nav-link.active{
+    background-color: var(--background) !important;
+    font-weight: 600 !important;
 }
 
 .navbar-toggler:focus {
-    box-shadow: 0 0 0 .25rem rgba(97, 70, 234, .2) !important;
+    box-shadow: 0 0 5px .1rem rgba(97, 70, 234, 1) !important;
+}
+
+.dropdown-menu-dark { --bs-dropdown-bg: var(--background) !important; }
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: var(--secondary) !important;
 }
