@@ -16,24 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn()=> view('welcome'));
 
 // <editor-folder desc="Start Route Books">
-Route::get('/books', [BookController::class, 'index']);
-Route::get('/books/{book}',[BookController::class, 'show']);
-Route::get('/book/{book}/edit',[BookController::class, 'edit']);
-Route::get('/books/create',[BookController::class, 'create']);
-Route::post('/books',[BookController::class, 'store']);
-Route::patch('/books/{book}', [BookController::class, 'update']);
-Route::delete('/books/{book}', [BookController::class, 'destroy']);
+Route::resource('books', BookController::class);
 // </editor-folder>
 
 // <editor-folder desc="Start Route Authors">
-Route::get('/authors', [AuthorController::class, 'index']);
+Route::resource('authors', AuthorController::class);
 // </editor-folder>
 
 // <editor-folder desc="Start Route Authors">
-Route::get('/publishers', [PublisherController::class, 'index']);
+Route::resource('publishers', PublisherController::class);
 // </editor-folder>
