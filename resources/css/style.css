@@ -29,7 +29,11 @@
     --placeholder: #2b2c34;
 }
 
-body{background: var(--background);}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: var(--background);
+}
 
 ::placeholder{ color: var(--placeholder) !important;}
 
@@ -127,6 +131,8 @@ a{
 a:hover{ color: var(--button-hover) !important; }
 
 .bg-secondary{ background-color: var(--secondary) !important; }
+.bg-danger{ background-color: var(--tertiary) !important; }
+.bg-primary{ background-color: var(--button) !important;}
 
 .form-control{ border-radius: 2px; }
 .form-control:focus {
