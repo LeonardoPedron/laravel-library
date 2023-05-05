@@ -134,7 +134,7 @@ a:hover{ color: var(--button-hover) !important; }
 .bg-danger{ background-color: var(--tertiary) !important; }
 .bg-primary{ background-color: var(--button) !important;}
 
-.form-control{ border-radius: 2px; }
+.form-control{ border-radius: 2px !important; }
 .form-control:focus {
     background-color: var(--form-input) !important;
     border-color: var(--button) !important;

@@ -28,17 +28,7 @@ class BookController extends Controller
     }
 
     public function update(Request $request,Book $book) {
-        $book->title = $request->get('title');
-        $book->isbn = $request->get('isbn');
-        $book->description = $request->get('description');
-        $book->dt_publication = $request->get('dt_publication');
-        $publisher = Publisher::find($request->get('id_publisher')) ;
-        $author = Author::find($request->get('id_author'));
-
-        $book->author()->associate($author);
-        $book->publisher()->associate($publisher);
-
-        $book->save();
+        $book->update($request->all());
 
         return redirect('library.books.index');
     }
@@ -58,8 +48,8 @@ class BookController extends Controller
         $book->isbn = $request->get('isbn');
         $book->description = $request->get('description');
         $book->dt_publication = $request->get('dt_publication');
-        $publisher = Publisher::find($request->get('id_publisher')) ;
-        $author = Author::find($request->get('id_author'));
+        $publisher = Publisher::find($request->get('publisher_id')) ;
+        $author = Author::find($request->get('author_id'));
 
         $book->author()->associate($author);
         $book->publisher()->associate($publisher);
@@ -72,6 +62,18 @@ class BookController extends Controller
         $book->delete();
 
         return redirect('library.books');
+    }
+
+    public function searchBook(Request $request) {
+        // $request va a puntare al name dell'input dato che è di tipo search tramite un magic method
+        $search_book = $request->search_book;
+
+        if($search_book !== ""){
+           $book = Book::where('title','isbn','description','LIKE',"%$search_book%")->get();
+        }
+        else{
+            return redirect('library.books');
+        }
     }
 
 }
