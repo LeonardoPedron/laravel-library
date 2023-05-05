@@ -9,9 +9,9 @@ class Book extends Model
 {
     use HasFactory;
 
-    public static function where(string $string, string $string1, string $string2, string $string3, )
+    /*public static function where(string $string, string $string1, string $string2, string $string3, )
     {
-    }
+    }*/
 
     public function author(){
         return $this->belongsTo(Author::class);
