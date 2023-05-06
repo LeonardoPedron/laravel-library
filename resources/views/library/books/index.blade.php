@@ -64,7 +64,7 @@
                         <form method="post" action="/books/{{$book->id}}">
                             @csrf
                             @method('delete')
-                            <button type="submit">
+                            <button type="submit" class="unset-style">
                                 <span class="text-danger"><i class="fa-solid fa-trash-alt"></i></span>
                             </button>
                         </form>

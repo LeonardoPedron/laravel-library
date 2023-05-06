@@ -20,7 +20,8 @@
                     </a>
                 </div>
                 <div class="col-6">
-                    <form class="d-flex" role="search" method="POST">
+                    <form class="d-flex" role="search" method="GET">
+                        @csrf
                         <input class="form-control me-2" type="search"  name="name" id="name" placeholder="Search Author" aria-label="Search">
                         <button class="btn btn-primary" type="submit"><span><i class="fa-solid fa-magnifying-glass"></i></span></button>
                     </form>
@@ -38,30 +39,30 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($authors as $author)
-                    <tr>
-                        <td>{{ $author->id }}</td>
-                        <td>{{ $author->identification->name }}</td>
-                        <td>{{ $author->identification->surname }}</td>
-                        <td>{{ $author->degree ?? 'NULL'}}</td>
-                        <td>{{ $author->dt_death ?? 'NULL'}}</td>
-                        <td class="text-center">
-                            <a href="authors/{{ $author->id }}">
-                                <span class="text-dark"><i class="fa-solid fa-eye"></i></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="authors/{{ $author->id }}/edit">
-                                <span class="text-primary"><i class="fa-solid fa-pencil"></i></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#">
-                                <span class="text-danger"><i class="fa-solid fa-trash"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                @endforeach
+                    @foreach($authors as $author)
+                        <tr>
+                            <td>{{ $author->id }}</td>
+                            <td>{{ $author->identification->name }}</td>
+                            <td>{{ $author->identification->surname }}</td>
+                            <td>{{ $author->degree ?? 'NULL'}}</td>
+                            <td>{{ $author->dt_death ?? 'NULL'}}</td>
+                            <td class="text-center">
+                                <a href="authors/{{ $author->id }}">
+                                    <span class="text-dark"><i class="fa-solid fa-eye"></i></span>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="authors/{{ $author->id }}/edit">
+                                    <span class="text-primary"><i class="fa-solid fa-pencil"></i></span>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#">
+                                    <span class="text-danger"><i class="fa-solid fa-trash"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
