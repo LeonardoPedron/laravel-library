@@ -20,8 +20,6 @@ Route::get('/', fn()=> view('welcome'));
 
 // <editor-folder desc="Start Route Books">
 Route::resource('books', BookController::class);
-Route::post('books/searchBook', [BookController::class,'searchBook']);
-Route::get('books/listBook',[BookController::class,'listBook']);
 // </editor-folder>
 
 // <editor-folder desc="Start Route Authors">

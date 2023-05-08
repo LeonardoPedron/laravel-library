@@ -10,10 +10,21 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
 
-    public function index(){
-        return view('library.books.index',[
-            'books' => Book::all()
-        ]);
+    public function index(Request $request){
+        $books = Book::query();
+        $authors = Author::query();
+        $search = $request->input('search_book');
+
+        if ($request->has('search_book')){
+                $books->where('title', 'LIKE', '%'. $search.'%')
+                    ->orWhere('author_id','LIKE','%'.$search.'%')
+                        ->get();
+        }
+
+        $books = $books->get(['id','title','isbn','description','dt_publication','publisher_id','author_id']);
+
+        return view('library.books.index',compact('books'));
+
     }
 
     public function show(Book $book) {
@@ -62,18 +73,6 @@ class BookController extends Controller
         $book->delete();
 
         return redirect('library.books');
-    }
-
-    public function searchBook(Request $request) {
-        // $request va a puntare al name dell'input dato che è di tipo search tramite un magic method
-        $search_book = $request->search_book;
-
-        if($search_book !== ""){
-           $book = Book::where('title','isbn','description','LIKE',"%$search_book%")->get();
-        }
-        else{
-            return redirect('library.books');
-        }
     }
 
 }

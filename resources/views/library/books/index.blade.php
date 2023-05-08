@@ -22,7 +22,7 @@
                 </a>
             </div>
             <div class="col-6 search-bar">
-                    <form class="d-flex" role="search" method="POST" action="/books.searchBook">
+                    <form class="d-flex" role="search" method="GET" >
                         @csrf
                         <input class="form-control me-2" type="search"  name="search_book" id="name" placeholder="Search Book" aria-label="Search" >
                         <button class="btn btn-primary" type="submit"><span><i class="fa-solid fa-magnifying-glass"></i></span></button>
